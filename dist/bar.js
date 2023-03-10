@@ -1,4 +1,4 @@
-export var mySelf;
+export let mySelf;
 mySelf = {
     name: "Afzal",
 };

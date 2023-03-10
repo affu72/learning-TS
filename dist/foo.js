@@ -1,1 +1,1 @@
-export var comeVar = 123;
+export let comeVar = 123;
