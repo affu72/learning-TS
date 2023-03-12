@@ -1,6 +1,6 @@
 //index signature
 
-type Airplane = {
+export type Airplane = {
   flightNumber: string;
   airplaneModel: string;
   dateOfDeparture: string;
@@ -12,6 +12,8 @@ type Airplane = {
     [k: string]: string; // this is called index signature, It can take multiple key value pair but must be as specified
   };
 };
+
+// export default Airplane;
 
 const airplane: Airplane = {
   flightNumber: "a207",
@@ -27,3 +29,5 @@ const airplane: Airplane = {
     "3": "a209",
   },
 };
+
+export default airplane;

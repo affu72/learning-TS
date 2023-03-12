@@ -1,5 +1,5 @@
-"use strict";
 //index signature
+// export default Airplane;
 const airplane = {
     flightNumber: "a207",
     airplaneModel: "b76",
@@ -13,3 +13,4 @@ const airplane = {
         "3": "a209",
     },
 };
+export default airplane;
