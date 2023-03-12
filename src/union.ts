@@ -1,12 +1,12 @@
 //Union Types
 
-type Dog = {
+export type Dog = {
   name: string;
   barks: boolean;
   wags: boolean;
 };
 
-type Cat = {
+export type Cat = {
   name: string;
   purrs: boolean;
 };
