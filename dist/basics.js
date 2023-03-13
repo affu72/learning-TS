@@ -1,4 +1,3 @@
-"use strict";
 let userName = "Afzal";
 let loggedIn = true;
 userName += " Herro";
@@ -41,3 +40,4 @@ for (let i = 0; i < 10; i++) {
 //map
 // const output = [1, 2, 3].map((value, index, arr) => value * 10);//number array
 const output = [1, 2, 3].map((value, index, arr) => `${value * 10}`); //string[]
+export {};

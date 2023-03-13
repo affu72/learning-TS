@@ -29,7 +29,7 @@ const myPerson: {
 
 //defining objects using interface keyword, so that can use in future as well.
 
-interface Person {
+export interface Person {
   firstName: string;
   lastName: string;
 }
