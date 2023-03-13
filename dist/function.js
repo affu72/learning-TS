@@ -12,7 +12,7 @@ export const printFormat = (title, param) => {
 export const fetchData = (url) => Promise.resolve(`data form ${url}`);
 //rest parameter
 function introduce(salutaton, ...name) {
-    return `${salutaton} ${names.join(" ")}`;
+    return `${salutaton} ${name.join(" ")}`;
 }
 function getName(user) {
     return `${user.first} ${user.second}`;

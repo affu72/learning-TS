@@ -2,7 +2,7 @@
 
 let user: string;
 
-console.log(user);
+// console.log(user);
 
 // let saveButton = document.getElementById("save");
 

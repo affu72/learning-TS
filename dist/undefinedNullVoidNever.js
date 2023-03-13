@@ -1,7 +1,7 @@
 "use strict";
 //null, undefined
 let user;
-console.log(user);
+// console.log(user);
 // let saveButton = document.getElementById("save");
 //console.log(saveButton); // null
 let loggedInUserName;

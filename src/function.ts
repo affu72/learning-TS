@@ -20,7 +20,7 @@ export const fetchData = (url: string) => Promise.resolve(`data form ${url}`);
 
 //rest parameter
 function introduce(salutaton: string, ...name: string[]) {
-  return `${salutaton} ${names.join(" ")}`;
+  return `${salutaton} ${name.join(" ")}`;
 }
 
 function getName(user: { first: string; second: string }) {
