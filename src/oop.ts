@@ -93,20 +93,38 @@ console.log(admin.returnName());
 // 3. someone may change the age from outside if it is private
 
 class PersonClass {
-  private age: number;
+  // private _age: number | undefined;
 
-  constructor(private name: string, public email: string) {
-    // if (age > 200 || age < 0) throw new Error("Age must be between 0-200");
-  }
-
-  public getName() {
-    return this.name;
-  }
-
-  public set setAge(age: number) {
+  private testUserAge(age: number) {
     if (age > 200 || age < 0) throw new Error("Age must be between 0-200");
+    return age;
+  }
 
-    this.age = age;
+  constructor(
+    private _name: string,
+    public email: string,
+    private _age: number
+  ) {
+    // if (age > 200 || age < 0) throw new Error("Age must be between 0-200");
+    this.testUserAge(_age);
+    this._age = _age;
+  }
+
+  public set name(name: string) {
+    this._name = name;
+  }
+
+  public get name() {
+    return this._name;
+  }
+
+  public set age(age: number) {
+    this.testUserAge(age);
+    this._age = age;
+  }
+
+  public get age() {
+    return this._age;
   }
 }
 
@@ -114,8 +132,7 @@ class PersonClass {
 
 // const mark: PersonClass = new PersonClass("mark", -42, "hotmail");
 
-const john: PersonClass = new PersonClass("John", "gmail");
+const john: PersonClass = new PersonClass("John", "gmail", 24);
 
-const mark: PersonClass = new PersonClass("mark", "hotmail");
-
-console.log(john, mark);
+// console.log(john.age);
+console.log(john.age);

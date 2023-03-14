@@ -70,25 +70,39 @@ console.log(admin.returnName());
 // 2. As constructor only called once if we want to change the age later on then we again need to check.
 // 3. someone may change the age from outside if it is private
 class PersonClass {
-    name;
+    _name;
     email;
-    age;
-    constructor(name, email) {
-        this.name = name;
-        this.email = email;
-        // if (age > 200 || age < 0) throw new Error("Age must be between 0-200");
-    }
-    getName() {
-        return this.name;
-    }
-    set setAge(age) {
+    _age;
+    // private _age: number | undefined;
+    testUserAge(age) {
         if (age > 200 || age < 0)
             throw new Error("Age must be between 0-200");
-        this.age = age;
+        return age;
+    }
+    constructor(_name, email, _age) {
+        this._name = _name;
+        this.email = email;
+        this._age = _age;
+        // if (age > 200 || age < 0) throw new Error("Age must be between 0-200");
+        this.testUserAge(_age);
+        this._age = _age;
+    }
+    set name(name) {
+        this._name = name;
+    }
+    get name() {
+        return this._name;
+    }
+    set age(age) {
+        this.testUserAge(age);
+        this._age = age;
+    }
+    get age() {
+        return this._age;
     }
 }
 // const john: PersonClass = new PersonClass("John", 240, "gmail");
 // const mark: PersonClass = new PersonClass("mark", -42, "hotmail");
-const john = new PersonClass("John", "gmail");
-const mark = new PersonClass("mark", "hotmail");
-console.log(john, mark);
+const john = new PersonClass("John", "gmail", 24);
+// console.log(john.age);
+console.log(john.age);
